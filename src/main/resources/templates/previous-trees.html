@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Previous Trees</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffe6f2;
+            color: #4a4a4a;
+            margin: 0;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #ff99cc;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        header h1 {
+            color: white;
+            margin: 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            background-color: #ff66b2;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            background-color: #ff3385;
+        }
+
+        div {
+            margin-top: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 20px;
+        }
+
+        pre {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div>
+        <h1>Previous Trees</h1>
+        <br>
+        <nav>
+            <a th:href="@{/}">[Home]</a>
+            <a th:href="@{/enter-numbers}">[Enter Numbers]</a>
+        </nav>
+    </div>
+</header>
+<div>
+    <ul>
+        <li th:each="jsonFormatTree : ${jsonFormatTreeList}">
+            <pre th:text="${jsonFormatTree}"></pre>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

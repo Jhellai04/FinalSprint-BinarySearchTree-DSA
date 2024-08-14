@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Numbers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffe6f2;
+            color: #4a4a4a;
+            margin: 0;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #ff99cc;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        header h1 {
+            color: white;
+            margin: 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            background-color: #ff66b2;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            background-color: #ff3385;
+        }
+
+        div {
+            margin-top: 20px;
+        }
+
+        form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #4a4a4a;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button[type="submit"] {
+            background-color: #ff66b2;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #ff3385;
+        }
+
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+
+        .success {
+            margin-top: 20px;
+            background-color: #ffccff;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .success pre {
+            background-color: white;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div>
+        <h1>Welcome To Binary Search Tree App</h1>
+        <br>
+        <nav>
+            <a th:href="@{/}">[Home]</a>
+            <a th:href="@{/previous-trees}">[Previous Trees]</a>
+        </nav>
+    </div>
+</header>
+<div>
+    <form th:action="@{/process-numbers}" method="post">
+        <label for="numbers">Enter a list of numbers:</label>
+        <input type="text" id="numbers" name="numbers" required>
+        <button type="submit">Create</button>
+    </form>
+    <div th:if="${error}" class="error">
+        <p th:text="${error}"></p>
+    </div>
+    <div th:if="${jsonData}" class="success">
+        <h2>Processed Tree Data:</h2>
+        <pre th:text="${jsonData}"></pre>
+    </div>
+</div>
+</body>
+</html>
