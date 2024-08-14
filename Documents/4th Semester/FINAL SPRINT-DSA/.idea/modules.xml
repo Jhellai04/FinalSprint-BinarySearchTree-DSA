@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/FINAL SPRINT-DSA.iml" filepath="$PROJECT_DIR$/.idea/FINAL SPRINT-DSA.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FinalSprint-BinarySearchTree-DSA/FinalSprintSoloProject.iml" filepath="$PROJECT_DIR$/FinalSprint-BinarySearchTree-DSA/FinalSprintSoloProject.iml" />
+    </modules>
+  </component>
+</project>
